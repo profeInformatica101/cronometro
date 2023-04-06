@@ -1,0 +1,43 @@
+<html>
+<head><title>Cronometro</title></head>
+<body>
+
+<p id="cronometro">00:00:00</p>
+<button id="boton-inicio" onclick="iniciarCronometro()">Iniciar</button>
+<button id="boton-detener" onclick="detenerCronometro()">Detener</button>
+
+<script>
+var tiempoInicio;
+var cronometro = document.getElementById("cronometro");
+var botonInicio = document.getElementById("boton-inicio");
+var botonDetener = document.getElementById("boton-detener");
+
+function iniciarCronometro() {
+  tiempoInicio = new Date().getTime();
+  actualizarCronometro();
+  botonInicio.disabled = true;
+  botonDetener.disabled = false;
+}
+
+function detenerCronometro() {
+  tiempoInicio = null;
+  botonInicio.disabled = false;
+  botonDetener.disabled = true;
+}
+
+function actualizarCronometro() {
+  if (tiempoInicio) {
+    var tiempoActual = new Date().getTime();
+    var tiempoTranscurrido = tiempoActual - tiempoInicio;
+    var horas = Math.floor(tiempoTranscurrido / 3600000);
+    var minutos = Math.floor((tiempoTranscurrido % 3600000) / 60000);
+    var segundos = Math.floor((tiempoTranscurrido % 60000) / 1000);
+    cronometro.innerHTML = ("0" + horas).slice(-2) + ":" + ("0" + minutos).slice(-2) + ":" + ("0" + segundos).slice(-2);
+    setTimeout(actualizarCronometro, 1000);
+  }
+}
+
+</script>
+
+</body>
+</html>

@@ -1,43 +1,41 @@
-<html>
-<head><title>Cronometro</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reloj de Arena y Cronómetro</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
 <body>
-
-<p id="cronometro">00:00:00</p>
-<button id="boton-inicio" onclick="iniciarCronometro()">Iniciar</button>
-<button id="boton-detener" onclick="detenerCronometro()">Detener</button>
-
-<script>
-var tiempoInicio;
-var cronometro = document.getElementById("cronometro");
-var botonInicio = document.getElementById("boton-inicio");
-var botonDetener = document.getElementById("boton-detener");
-
-function iniciarCronometro() {
-  tiempoInicio = new Date().getTime();
-  actualizarCronometro();
-  botonInicio.disabled = true;
-  botonDetener.disabled = false;
-}
-
-function detenerCronometro() {
-  tiempoInicio = null;
-  botonInicio.disabled = false;
-  botonDetener.disabled = true;
-}
-
-function actualizarCronometro() {
-  if (tiempoInicio) {
-    var tiempoActual = new Date().getTime();
-    var tiempoTranscurrido = tiempoActual - tiempoInicio;
-    var horas = Math.floor(tiempoTranscurrido / 3600000);
-    var minutos = Math.floor((tiempoTranscurrido % 3600000) / 60000);
-    var segundos = Math.floor((tiempoTranscurrido % 60000) / 1000);
-    cronometro.innerHTML = ("0" + horas).slice(-2) + ":" + ("0" + minutos).slice(-2) + ":" + ("0" + segundos).slice(-2);
-    setTimeout(actualizarCronometro, 1000);
-  }
-}
-
-</script>
-
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col">
+        <img src="image/logo.png" alt="Logo del instituto" class="img-fluid">
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <div id="controls">
+          <button id="start" class="btn btn-primary">Iniciar</button>
+          <button id="stop" class="btn btn-warning">Parar</button>
+          <button id="reset" class="btn btn-danger">Reiniciar</button>
+          <button id="save" class="btn btn-success">Guardar</button>
+        </div>
+      </div>
+      <div class="col">
+        <div id="timer" class="h3">00:00:00</div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <div id="savedTimes"></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="sketch.js" defer></script>
 </body>
 </html>

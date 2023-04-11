@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Preparación Torneo de Debate Educativo</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
@@ -13,9 +13,23 @@
       background-position: center;
 
     }
+    h1{
+    color:green;
+    font-size: 101px;
+    background: rgba(255, 255, 255, 0.8);
+
+  }
+  
 
     
     #timer {
+      font-size: 12em;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+      text-shadow: 2px 2px 5px #000;
+    }
+    #listado{
       font-size: 12em;
       font-weight: bold;
       text-align: center;
@@ -28,6 +42,16 @@
       text-align: center;
       color: #fff;
       text-shadow: 2px 2px 5px #000;
+    }
+    #comentarios{
+      font-size: 33px;
+      font-weight: bold;
+      text-align: center;
+     color:white;
+      text-shadow: 2px 2px 5px #000;
+    }
+    #savedTimes{
+      color: #105312;
     }
     
     .time-input {
@@ -75,21 +99,58 @@
     max-width: 150px;
     max-height: 150px;
   }
+  /* Estilos personalizados aquí */
+@media (max-width: 767px) {
+  #timer {
+    font-size: 6em;
+  }
+  #titulo {
+    font-size: 4em;
+  }
+  .time-input {
+    font-size: 4em;
+  }
+  #time3,
+  #time4 {
+    font-size: 1.5em;
+    padding: 10px 20px;
+  }
+  #start {
+    font-size: 1em;
+    padding: 5px 10px;
+  }
+  
+}
 </style>
 </head>
 <body>
   <div class="container">
     <div class="row mt-3">
-      <div class="col text-center">
+      <div class="col-12 text-center">
         <div class="logo-wrapper">
           <img src="image/logo.png" alt="Logo del instituto" class="img-fluid">
         </div>
       </div>
     </div>
     <div class="row mt-5 justify-content-center">
-      <div id="titulo"><h1>TORNEO DE DEBATE EDUCATIVO</h1></div>
+      <div id="titulo"><h1>DEBATE EDUCATIVO</h1></div>
       <div class="col-12 text-center">
         <div id="timer">00:00:00</div>
+        <div class="row mt-5 justify-content-center">
+          <div class="col-auto">
+            <button id="start" class="btn btn-primary mr-3">Iniciar</button>
+            <button id="pause" class="btn btn-warning mr-3">Pausar</button>
+            <button id="reset" class="btn btn-danger mr-3">Reiniciar</button>
+            <button id="saveTime" class="btn btn-success mr-3">Comentario</button>
+          </div>
+        </div>
+        <div class="row mt-3 justify-content-center">
+          <div class="col-auto">
+            <button id="time3" class="btn btn-secondary mr-3">3:00</button>
+            <button id="time4" class="btn btn-secondary mr-3">4:00</button>
+          </div>
+        </div>
+
         <div class="row justify-content-center mt-3">
           <div class="col-4 col-sm-2">
             <input type="text" class="configurador form-control time-input" id="hours" value="00">
@@ -101,19 +162,14 @@
             <input type="text" class="configurador form-control time-input" id="seconds" value="00">
           </div>
         </div>
+
       </div>
     </div>
-    <div class="row mt-3 justify-content-center">
-      <div class="col-auto">
-        <button id="time3" class="btn btn-secondary mr-3">3:00</button>
-        <button id="time4" class="btn btn-secondary mr-3">4:00</button>
-      </div>
-    </div>
-    <div class="row mt-5 justify-content-center">
-      <div class="col-auto">
-        <button id="start" class="btn btn-primary mr-3">Iniciar</button>
-        <button id="pause" class="btn btn-warning mr-3">Pausar</button>
-        <button id="reset" class="btn btn-danger mr-3">Reiniciar</button>
+   
+    <div id="comentarios" class="row mt-5">
+      <div class="col-12">
+        <h2 class="text-center">Comentarios:</h2>
+        <ul id="savedTimes" class="list-group"></ul>
       </div>
     </div>
   </div>

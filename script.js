@@ -11,6 +11,18 @@ $(function() {
 
   var time = 0;
   var interval;
+  
+  function saveTime() {
+    var comment = prompt("Escriba un comentario para este tiempo:");
+  
+    if (comment !== null) {
+      var savedTime = timer.text();
+      var listItem = $('<li class="list-group-item"></li>').text(savedTime + ' - ' + comment);
+      $('#savedTimes').append(listItem);
+    }
+  }
+  
+  $('#saveTime').click(saveTime);
 
   function updateTime() {
     var hours = parseInt(hoursInput.val());
@@ -45,6 +57,10 @@ $(function() {
   }
 
   function pauseTimer() {
+    clearInterval(interval);
+  }
+  function pauseTimer() {
+    console.log("Pausing timer");
     clearInterval(interval);
   }
 

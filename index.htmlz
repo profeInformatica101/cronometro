@@ -8,9 +8,12 @@
   <style>
     /* Estilos personalizados aquí */
     body {
-      background-image: url('https://cdn.pixabay.com/photo/2018/08/02/16/28/olive-tree-3579922_960_720.jpg');
-      background-size: cover;
-      background-position: center;
+      background-color:black;
+
+    /* Asegurar que el body ocupe toda la altura/anchura de la pantalla */
+
+    margin: 20px;
+    padding: 100px;
 
     }
     h1{
@@ -19,7 +22,12 @@
     background: rgba(255, 255, 255, 0.8);
 
   }
-  
+  .container{
+    background-image: url('image/fondo_debate_horizontal.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
 
     
     #timer {
@@ -132,13 +140,13 @@
   <div class="container">
     <div class="row mt-3">
       <div class="col-12 text-center">
-        <div class="logo-wrapper">
+       <!--<div class="logo-wrapper">
           <img src="image/logo.png" alt="Logo del instituto" class="img-fluid">
-        </div>
+        </div>--> 
       </div>
     </div>
     <div class="row mt-5 justify-content-center">
-      <div id="titulo"><h1>DEBATE EDUCATIVO</h1></div>
+    <!-- <div id="titulo"><h1>DEBATE EDUCATIVO</h1></div>--> 
       <div class="col-12 text-center">
         <div id="timer">00:00:00</div>
         <div class="row mt-5 justify-content-center">

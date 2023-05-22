@@ -10,7 +10,7 @@ $(function() {
   var time4Button = $('#time4');
 
   var time = 0;
-  var interval;
+  var interval = null;
   
   function saveTime() {
     var comment = prompt("Escriba un comentario para este tiempo:");
@@ -28,46 +28,54 @@ $(function() {
     var hours = parseInt(hoursInput.val());
     var minutes = parseInt(minutesInput.val());
     var seconds = parseInt(secondsInput.val());
-
+  
     time = hours * 60 * 60 + minutes * 60 + seconds;
+    timer.css('color', '#fff');  // Resetea el color del temporizador a blanco cada vez que se actualiza el tiempo.
     updateTimerDisplay();
   }
 
-  function updateTimerDisplay() {
-    var hours = Math.floor(time / 3600);
-    var minutes = Math.floor((time % 3600) / 60);
-    var seconds = time % 60;
 
+  function updateTimerDisplay() {
+    var absoluteTime = Math.abs(time);
+    var hours = Math.floor(absoluteTime / 3600);
+    var minutes = Math.floor((absoluteTime % 3600) / 60);
+    var seconds = absoluteTime % 60;
+  
     var hoursString = hours.toString().padStart(2, '0');
     var minutesString = minutes.toString().padStart(2, '0');
     var secondsString = seconds.toString().padStart(2, '0');
-
+  
     timer.text(hoursString + ':' + minutesString + ':' + secondsString);
+  
+    if (time < 0) {
+      timer.css('color', 'red');
+    } else {
+      timer.css('color', '#fff');
+    }
   }
-
   function startTimer() {
+    if (interval) {
+      return;
+    }
+  
     interval = setInterval(function() {
       time--;
-      if (time < 0) {
-        clearInterval(interval);
-        time = 0;
-      }
       updateTimerDisplay();
     }, 1000);
   }
-
+  
   function pauseTimer() {
-    clearInterval(interval);
+    if (interval) {
+      clearInterval(interval);
+      interval = null;
+    }
   }
-  function pauseTimer() {
-    console.log("Pausing timer");
-    clearInterval(interval);
-  }
-
+  
   function resetTimer() {
     pauseTimer();
     updateTime();
   }
+  
 
   function setTime3() {
     hoursInput.val('00');

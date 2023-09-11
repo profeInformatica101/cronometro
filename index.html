@@ -6,25 +6,79 @@
   <title>KRONO</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-    /* Estilos generales */
-    body {
-      background-color: black;
-      margin: 10px;
-      padding: 100px;
-    }
 
-    h1 {
-      color: green;
-      font-size: 101px;
-      background: rgba(255, 255, 255, 0.8);
-    }
+    /* Estilos base */
+        body {
+            background-color: black;
+            margin: 10px;
+            padding: 2vh;
+        }
 
-    .container {
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      height: 858px;
-    }
+        h1 {
+            color: green;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .container {
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        /* Estilos para pantallas medianas y grandes */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 8vw;
+            }
+
+            #timer {
+                font-size: 10vw;
+            }
+
+            .time-input {
+                font-size: 6vw;
+            }
+
+            #time3, #time4 {
+                font-size: 3vw;
+            }
+
+            #start {
+                font-size: 2vw;
+            }
+
+            .logo-wrapper img {
+                width: 30vw;
+            }
+        }
+
+        /* Estilos para pantallas pequeñas (móviles) */
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 5vw;
+            }
+
+            #timer {
+                font-size: 8vw;
+            }
+
+            .time-input {
+                font-size: 5vw;
+            }
+
+            #time3, #time4 {
+                font-size: 3vw;
+            }
+
+            #start {
+                font-size: 2.5vw;
+            }
+
+            .logo-wrapper img {
+                width: 50vw;
+            }
+        }
 
     .logo-wrapper {
       background-image: url('https://cdn.pixabay.com/photo/2018/08/02/16/28/olive-tree-3579922_960_720.jpg');

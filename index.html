@@ -1,195 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Preparación Torneo de Debate Educativo</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    /* Estilos personalizados aquí */
-    body {
-      background-color:black;
-
-    /* Asegurar que el body ocupe toda la altura/anchura de la pantalla */
-
-    margin: 20px;
-    padding: 100px;
-
-    }
-    h1{
-    color:green;
-    font-size: 101px;
-    background: rgba(255, 255, 255, 0.8);
-
-  }
-    .logoCentro{
-        background-image: url('https://cdn.pixabay.com/photo/2018/08/02/16/28/olive-tree-3579922_960_720.jpg');
-    }
-  .container{
-    background-image: url('image/fondo_debate_horizontal.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    height: 858px;
-  }
-
-    
-    #timer {
-      font-size: 12em;
-      font-weight: bold;
-      text-align: center;
-      color: #fff;
-      text-shadow: 2px 2px 5px #000;
-    }
-    #listado{
-      font-size: 12em;
-      font-weight: bold;
-      text-align: center;
-      color: #fff;
-      text-shadow: 2px 2px 5px #000;
-    }
-    #titulo{
-      font-size: 12em;
-      font-weight: bold;
-      text-align: center;
-      color: #fff;
-      text-shadow: 2px 2px 5px #000;
-    }
-    #comentarios{
-      font-size: 33px;
-      font-weight: bold;
-      text-align: center;
-     color:white;
-      text-shadow: 2px 2px 5px #000;
-    }
-    #savedTimes{
-      color: #105312;
-    }
-    
-    .time-input {
-      border: none;
-      background-color: transparent;
-      font-size: 8em;
-      font-weight: bold;
-      text-align: center;
-      color: #fff;
-
-    }
-    
-    .time-input:focus {
-      outline: none;
- 
-    }
-
-    #time3, #time4 {
-      font-size: 2em;
-      padding: 20px 40px;
-    }
-
-    #start {
-      font-size: 1.5em;
-      padding: 10px 20px;
-    }
-
-    .configurador{
-      color:grey;
-    }
-    .logo-wrapper {
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    backdrop-filter: blur(5px);
-    margin: auto;
-  }
-
-  .logo-wrapper img {
-    max-width: 150px;
-    max-height: 150px;
-  }
-  /* Estilos personalizados aquí */
-@media (max-width: 767px) {
-  #timer {
-    font-size: 6em;
-  }
-  #titulo {
-    font-size: 4em;
-  }
-  .time-input {
-    font-size: 4em;
-  }
-  #time3,
-  #time4 {
-    font-size: 1.5em;
-    padding: 10px 20px;
-  }
-  #start {
-    font-size: 1em;
-    padding: 5px 10px;
-  }
-
-  h1{
-      font-size: 9em;
-      font-size: 58px;
-    }
-  
-}
-</style>
-</head>
-<body>
-  <div class="container">
-    <div class="row mt-3">
-      <div class="col-12 text-center">
-       <!--<div class="logo-wrapper">
-          <img src="image/logo.png" alt="Logo del instituto" class="img-fluid">
-        </div>--> 
-      </div>
-    </div>
-    <div class="row mt-5 justify-content-center">
-    <!-- <div id="titulo"><h1>DEBATE EDUCATIVO</h1></div>--> 
-      <div class="col-12 text-center">
-        <div id="timer">00:00:00</div>
-        <div class="row mt-5 justify-content-center">
-          <div class="col-auto">
-            <button id="start" class="btn btn-primary mr-3">Iniciar</button>
-            <button id="pause" class="btn btn-warning mr-3">Pausar</button>
-            <button id="reset" class="btn btn-danger mr-3">Reiniciar</button>
-          
-          </div>
-        </div>
-        <div class="row mt-3 justify-content-center">
-          <div class="col-auto">
-            <button id="time3" class="btn btn-secondary mr-3">3:00</button>
-            <button id="time4" class="btn btn-secondary mr-3">4:00</button>
-          </div>
-        </div>
-
-        <div class="row justify-content-center mt-3">
-          <div class="col-4 col-sm-2">
-            <input type="text" class="configurador form-control time-input" id="hours" value="00">
-          </div>
-          <div class="col-4 col-sm-2">
-            <input type="text" class="configurador form-control time-input" id="minutes" value="05">
-          </div>
-          <div class="col-4 col-sm-2">
-            <input type="text" class="configurador form-control time-input" id="seconds" value="00">
-          </div>
-        </div>
-
-      </div>
-    </div>
-   
-
-  </div>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="script.js"></script>
-</body>
 </html><!DOCTYPE html>
 <html lang="es">
 <head>
@@ -199,6 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     /* Estilos personalizados aquí */
+
+
     body {
       background-color:black;
 
@@ -221,7 +31,9 @@
     background-size: cover;
     height: 858px;
   }
-
+      .logoCentro{
+        background-image: url('https://cdn.pixabay.com/photo/2018/08/02/16/28/olive-tree-3579922_960_720.jpg');
+    }
     
     #timer {
       font-size: 12em;
